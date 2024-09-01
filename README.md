@@ -6,7 +6,7 @@ I may or may not use this. It is only experimental, has not been tested yet and 
 
 To use the Script, write it to a file:
 ```
-echo "$(curl https://raw.githubusercontent.com/1u5t1n14n/.dotfiles/main/.install.sh)" > .install.
+echo "$(curl https://raw.githubusercontent.com/1u5t1n14n/.dotfiles/main/.install.sh)" > .install.sh
 ```
 Make it executable:
 ```
