@@ -47,7 +47,7 @@ passwd
 useradd -m -g users -G wheel ${user}
 passwd ${user}
 
-pacman -S base-devel git dosfstools grub efibootmgr ly hyprland lvm2 mtools neovim libpulse networkmanager sudo
+pacman -S base-devel git dosfstools grub efibootmgr lvm2 mtools neovim libpulse networkmanager sudo ly
 pacman -S linux linux-headers linux-lts linux-lts-headers
 pacman -S linux-firmware
 pacman -S mesa libva-mesa-driver intel-media-driver
@@ -75,6 +75,9 @@ systemctl enable NetworkManager
 systemctl enable ly.service
 
 sed -i '/%wheel ALL=(ALL:ALL) ALL/s/^#//g' /etc/sudoers
+sed -i '/Color/s/^#//g' /etc/pacman.conf
+sed -i '/ParallelDownloads = 5/s/^#//g' /etc/pacman.conf
+sed -i "38i\ILoveCandy" /etc/pacman.conf
 
 su ${user}
 cd
@@ -83,7 +86,10 @@ cd yay/
 makepkg -si
 cd
 sudo rm -rf yay/
-yay -S hyprpaper zen-browser-bin
+pacman -S pipewire wireplumber pipewire-audio pipewire-alsa hyprland btop inkscape krita libreoffice obsidian rofi-wayland zsh wezterm
+systemctl --user enable pipewire
+chsh -s /usr/bin/zsh
+yay -S hyprpaper zen-browser-bin superfile
 exit
 exit
 umount -a
