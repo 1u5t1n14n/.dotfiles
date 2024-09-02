@@ -11,7 +11,7 @@ read timezone
 echo "Preferred Keyboard Layout: (e.g. de-latin1 for German; for more information, refer to 1.5 Set the console keyboard layout and font on archlinux.org/title/installation_guide)"
 read layout
 
-# echo -e "g\nn\n\n\n+1G\n\nt\n\n44\n\nn\n\n\n+1M\n\nn\n\n\n+16G\n\nt\n\n19\n\nn\n\n\n\n\n\nw" | fdisk /dev/${disk}
+# fdisk
 
 mkfs.fat -F32 /dev/"${disk}"1
 cryptsetup luksFormat /dev/"${disk}"4
