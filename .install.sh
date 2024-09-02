@@ -1,7 +1,5 @@
 #!/bin/bash
 
-line_number=55
-
 echo "Preferred Disk:"
 read disk
 echo "Preferred Hostname:"
