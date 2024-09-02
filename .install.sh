@@ -2,9 +2,9 @@
 
 line_number=55
 
-echo "Name of the Disk, where you want to install Linux:"
+echo "Preferred Disk:"
 read disk
-echo "What would you like to name your Device:"
+echo "Preferred Hostname:"
 read device
 echo "Username:"
 read user
@@ -86,7 +86,7 @@ cd yay/
 makepkg -si
 cd
 sudo rm -rf yay/
-pacman -S pipewire wireplumber pipewire-audio pipewire-alsa hyprland btop inkscape krita libreoffice obsidian rofi-wayland zsh wezterm
+sudo pacman -S pipewire wireplumber pipewire-audio pipewire-alsa hyprland btop inkscape krita libreoffice obsidian rofi-wayland zsh wezterm
 systemctl --user enable pipewire
 chsh -s /usr/bin/zsh
 yay -S hyprpaper zen-browser-bin superfile zip unzip ttf-jetbrains-mono-nerd omm jetbrains-toolbox
