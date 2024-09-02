@@ -50,4 +50,8 @@ systemctl --user enable pipewire
 chsh -s /usr/bin/zsh
 yay -S hyprpaper zen-browser-bin superfile zip unzip ttf-jetbrains-mono-nerd omm jetbrains-toolbox
 exit
-exit
+echo "do the following."
+echo "exit"
+echo "umount -a"
+echo "swapoff -a"
+echo "reboot"
