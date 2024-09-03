@@ -4,8 +4,6 @@ echo "Preferred Disk:"
 read disk
 echo "Preferred Hostname:"
 read device
-echo "Username:"
-read user
 
 # fdisk
 
