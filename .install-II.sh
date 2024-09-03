@@ -1,5 +1,16 @@
 #!/bin/bash
 
+echo "Preferred Disk:"
+read disk
+echo "Preferred Hostname:"
+read device
+echo "Username:"
+read user
+echo "Timezone: (e.g. Europe/Berlin; for more information, refer to 3.3 Time on archlinux.org/title/installation_guide)"
+read timezone
+echo "Preferred Keyboard Layout: (e.g. de-latin1 for German; for more information, refer to 1.5 Set the console keyboard layout and font on archlinux.org/title/installation_guide)"
+read layout
+
 ln -sf /usr/share/zoneinfo/"${timezone}" /etc/localtime
 hwclock --systohc
 passwd
@@ -17,8 +28,8 @@ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 echo "KEYMAP=${layout}" > /etc/vconsole.conf
 echo "${device}" > /etc/hostname
 
-sed -i "${line_number}d" /etc/mkinitcpio.conf
-sed -i "${line_number}i\HOOKS=(base udev block keyboard autodetect microcode modconf kms keymap consolefont encrypt lvm2 filesystems fsck)" /etc/mkinitcpio.conf
+sed -i "55d" /etc/mkinitcpio.conf
+sed -i "55i\HOOKS=(base udev block keyboard autodetect microcode modconf kms keymap consolefont encrypt lvm2 filesystems fsck)" /etc/mkinitcpio.conf
 
 mkinitcpio -p linux
 mkinitcpio -p linux-lts
