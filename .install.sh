@@ -33,10 +33,9 @@ mount /dev/"${device}"/lv_home /mnt/home
 swapon /dev/"${disk}"3
 pacstrap -i /mnt base
 genfstab -U -p /mnt >> /mnt/etc/fstab
+
+echo "do the following:"
+echo "echo '$(curl https://raw.githubusercontent.com/1u5t1n14n/.dotfiles/main/.install-II.sh)' > .install-II.sh"
+echo "chmod +x .install-II.sh"
+echo "./.install-II.sh"
 arch-chroot /mnt
-
-# execute .install-II.sh here
-
-#umount -a
-#swapoff -a
-#reboot
