@@ -60,7 +60,8 @@ require("lazy").setup({
 
     { "mfussenegger/nvim-dap" },
     { "OXY2DEV/markview.nvim" },
-    { "folke/noice.nvim", event = "VeryLazy", opts = { }, dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify", } }
+    { "folke/noice.nvim", event = "VeryLazy", opts = { }, dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify", } },
+    { "eandrju/cellular-automaton.nvim" }, -- because why not?
   },
   checker = { enabled = true },
 })
@@ -84,6 +85,7 @@ vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
 vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
 vim.keymap.set('n', '<leader>gf', vim.lsp.buf.format, {})
 vim.keymap.set('n', '<leader>dc', dap.continue, {})
+vim.keymap.set("n", "<leader>fuck", "<cmd>CellularAutomaton make_it_rain<CR>")
 
 -- Telescope Config
 require("telescope").setup {
