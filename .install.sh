@@ -4,6 +4,10 @@ echo "Preferred Disk:"
 read disk
 echo "Preferred Hostname:"
 read device
+echo "Size of root-Partition (in GB):"
+read root
+echo "Size of home-Partition (in GB):"
+read home
 
 sfdisk /dev/"${disk}" <<EOF
 label: gpt
@@ -20,8 +24,8 @@ cryptsetup open --type luks /dev/"${disk}"4 lvm
 # enter password
 pvcreate /dev/mapper/lvm
 vgcreate "${device}" /dev/mapper/lvm
-lvcreate -L 214.5GB "${device}" -n lv_root
-lvcreate -L 700GB "${device}" -n lv_home
+lvcreate -L "${root}"GB "${device}" -n lv_root
+lvcreate -L "${home}"GB "${device}" -n lv_home
 modprobe dm_mod
 vgscan
 vgchange -ay
