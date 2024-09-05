@@ -39,7 +39,7 @@ pacstrap -i /mnt base
 genfstab -U -p /mnt >> /mnt/etc/fstab
 
 echo "do the following:"
-echo "curl https://raw.githubusercontent.com/1u5t1n14n/.dotfiles/main/.install-II.sh to a File"
+echo "curl https://raw.githubusercontent.com/1u5t1n14n/.dotfiles/main/.install-root.sh to a File"
 echo "chmod +x .install.sh"
 echo "./.install.sh"
 arch-chroot /mnt
