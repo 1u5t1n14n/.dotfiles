@@ -38,7 +38,7 @@ sed -i "6d" /etc/default/grub
 sed -i "6i\GRUB_CMDLINE_LINUX_DEFAULT=\"loglevel=3 cryptdevice=/dev/${disk}4:${device} quiet\"" /etc/default/grub
 
 grub-install --target=x86_64-efi --bootloader-id="${device}" --efi-directory=/boot --recheck
-grub-install --target=i386-pc /dev/"${disk}"
+grub-install --target=i386-pc /dev/nvme0n1
 cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo
 grub-mkconfig -o /boot/grub/grub.cfg
 systemctl enable NetworkManager
