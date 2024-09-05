@@ -5,7 +5,13 @@ read disk
 echo "Preferred Hostname:"
 read device
 
-# fdisk
+sfdisk /dev/"${disk}" <<EOF
+label: gpt
+size=1G, type=uefi
+size=1M, type=bios
+size=16G, type=linux-swap
+size=0, type=lvm
+EOF
 
 mkfs.fat -F32 /dev/"${disk}"1
 cryptsetup luksFormat /dev/"${disk}"4
