@@ -17,9 +17,9 @@ size=0, type=lvm
 EOF
 
 mkfs.fat -F32 /dev/"${disk}"1
-cryptsetup luksFormat /dev/"${disk}"3
+cryptsetup luksFormat /dev/"${disk}"4
 # enter password
-cryptsetup open --type luks /dev/"${disk}"3 lvm
+cryptsetup open --type luks /dev/"${disk}"4 lvm
 # enter password
 pvcreate /dev/mapper/lvm
 vgcreate "${device}" /dev/mapper/lvm
@@ -31,13 +31,13 @@ vgchange -ay
 
 mkfs.ext4 /dev/"${device}"/lv_root
 mkfs.ext4 /dev/"${device}"/lv_home
-mkswap /dev/"${disk}"2
+mkswap /dev/"${disk}"3
 mount /dev/"${device}"/lv_root /mnt
 mkdir /mnt/boot
 mount /dev/"${disk}"1 /mnt/boot
 mkdir /mnt/home
 mount /dev/"${device}"/lv_home /mnt/home
-swapon /dev/"${disk}"2
+swapon /dev/"${disk}"3
 pacstrap -i /mnt base
 genfstab -U -p /mnt >> /mnt/etc/fstab
 
