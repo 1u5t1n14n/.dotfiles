@@ -85,7 +85,7 @@ vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
 vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
 vim.keymap.set('n', '<leader>gf', vim.lsp.buf.format, {})
 vim.keymap.set('n', '<leader>dc', dap.continue, {})
-vim.keymap.set("n", "<leader>fuck", "<cmd>CellularAutomaton make_it_rain<CR>")
+vim.keymap.set("n", "<leader>fu", "<cmd>CellularAutomaton make_it_rain<CR>")
 
 -- Telescope Config
 require("telescope").setup {
