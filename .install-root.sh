@@ -51,5 +51,4 @@ sed -i "38i\ILoveCandy" /etc/pacman.conf
 
 echo "$(curl https://raw.githubusercontent.com/1u5t1n14n/.dotfiles/main/.install-usr.sh)" > /home/"${user}"/.install.sh
 chmod +x /home/"${user}"/.install.sh
-echo "change to your user, and do:"
-echo "./.install.sh"
+sudo -H -u "${user}" bash -c './home/"${user}"/.install.sh'
