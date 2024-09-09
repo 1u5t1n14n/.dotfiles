@@ -9,9 +9,10 @@ read root
 echo "Size of home-Partition (in GB):"
 read home
 
-sfdisk /dev/"${disk}" <<EOF
+sfdisk /dev/sdX <<EOF
 label: gpt
 size=1G, type=uefi
+size=1M, type=bios
 size=16G, type=linux-swap
 size=0, type=lvm
 EOF
