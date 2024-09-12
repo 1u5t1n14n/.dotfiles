@@ -9,7 +9,7 @@ read root
 echo "Size of home-Partition (in GB):"
 read home
 
-sfdisk /dev/sdX <<EOF
+sfdisk /dev/sdX <<EOF # dis nicht funktionieren
 label: gpt
 size=1G, type=uefi
 size=1M, type=bios
