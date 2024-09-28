@@ -38,7 +38,6 @@ vim.opt.rtp:prepend(lazypath)
 -- Plugins for lazy.nvim go here
 require("lazy").setup({
   spec = {
-    { "rebelot/kanagawa.nvim", priority = 1000 },
     { "nvim-telescope/telescope.nvim", tag = '0.1.8', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' }},
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     { "nvim-neo-tree/neo-tree.nvim", branch = "v3.x", dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons", "MunifTanjim/nui.nvim", "3rd/image.nvim", } },
@@ -58,7 +57,6 @@ require("lazy").setup({
     { "rafamadriz/friendly-snippets" },
     { "hrsh7th/cmp-nvim-lsp" },
 
-    { "mfussenegger/nvim-dap" },
     { "OXY2DEV/markview.nvim" },
     { "folke/noice.nvim", event = "VeryLazy", opts = { }, dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify", } },
     { "eandrju/cellular-automaton.nvim" }, -- because why not?
@@ -67,7 +65,6 @@ require("lazy").setup({
 })
 
 -- Requirements
-local dap = require("dap")
 local builtin = require('telescope.builtin')
 
 -- Keymaps
@@ -199,4 +196,3 @@ require("noice").setup({
 })
 
 -- Colorscheme
-vim.cmd("colorscheme kanagawa-dragon")
